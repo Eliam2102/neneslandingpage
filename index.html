@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nenesland - Diversión para los pequeños</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Font Awesome para íconos -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papbZSXvdzz0tV1zQCdGTyzXpxA9A34ZjhUKIw0T56w3PmjAo5nI0hCmcZG2WQacQDjdVGDgu0yye5HenYJQ1g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Tipografía Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+    <nav>
+      <div class="logo">
+            <h1 class="logo-text">
+            <span class="color1">N</span>
+            <span class="color2">e</span>
+            <span class="color3">n</span>
+            <span class="color4">e</span>
+            <span class="color5">s</span>
+            <small>LAND</small>
+            </h1>
+        </div>
+        <!-- Botón toggle visible solo en móvil -->
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/nenes.land.2025" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+            <a href="http://instagram.com/nenes_land/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/529341249074" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero full-width" id="inicio" aria-label="Sección de bienvenida">
+    <div class="hero-content">
+        <h2 class="hero-title">
+            ¡Diversión y magia para los más pequeños en <span>Nenesland</span>!
+        </h2>
+        <p class="hero-subtitle">
+            Renta inflables, pinta caritas, acuarelas y mucho más para tu fiesta.
+        </p>
+        <a href="#productos" class="btn-primary btn-hero" aria-label="Ver productos y servicios">
+            Explora nuestros servicios
+        </a>
+    </div>
+    <div class="hero-image-container">
+        <img
+            src="./assets/imagen-nenes-land.jpg"
+            alt="Niños felices en una fiesta con tobogán inflable"
+            loading="lazy"
+        />
+    </div>
+</section>
+
+    <!-- Productos y Servicios -->
+    <section class="productos" id="productos" aria-label="Productos y servicios">
+      <h2 class="section-title">Productos y Servicios</h2>
+
+      <div class="filter-search-container">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Buscar producto o servicio..."
+          aria-label="Buscar producto o servicio"
+        />
+        <select id="categoryFilter" aria-label="Filtrar por categoría">
+          <option value="todos">Todas las categorías</option>
+          <option value="inflables">Inflables</option>
+          <option value="pinta-carita">Pinta Carita</option>
+          <option value="acuarelas">Pinta Acuarelas</option>
+          <option value="proyeccion">Proyección de Películas</option>
+          <option value="otros">Otros Servicios</option>
+        </select>
+      </div>
+
+      <div id="productoCards" class="cards-container" aria-live="polite" aria-relevant="additions">
+        <!-- Tarjetas generadas desde JS -->
+        <div class="skeleton-card" aria-hidden="true">
+          <div class="skeleton-img"></div>
+          <div class="skeleton-text short"></div>
+          <div class="skeleton-text"></div>
+          <div class="skeleton-btn"></div>
+        </div>
+        <div class="skeleton-card" aria-hidden="true">
+          <div class="skeleton-img"></div>
+          <div class="skeleton-text short"></div>
+          <div class="skeleton-text"></div>
+          <div class="skeleton-btn"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal de producto -->
+    <div id="modalProducto" class="modal" ...>
+        <div class="modal-content">
+            <button class="modal-close" ...>&times;</button>
+            <img id="modalImg" src="" alt="" class="modal-img" />
+            <div class="modal-details">
+            <h3 id="modalTitle" class="modal-title"></h3>
+            <p id="modalCat" class="modal-cat"></p>
+            <p id="modalDesc" class="modal-desc"></p>
+            <p id="modalCost" class="modal-cost"></p>
+            </div>
+        </div>
+        </div>
+
+    <!-- Contáctanos -->
+    <section class="contactanos" id="contacto" aria-label="Contáctanos">
+      <h2 class="section-title">Contáctanos</h2>
+      <div class="contact-container">
+        <div class="contact-form-container">
+          <form id="contactForm" novalidate>
+            <h3>Escríbenos y anima tu próxima fiesta</h3>
+            <label for="name">Nombre completo:</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+
+            <label for="email">Correo electrónico:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="correo@ejemplo.com"
+            />
+
+            <label for="phone">Número de teléfono:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              pattern="[0-9\s+-]{7,15}"
+              placeholder="Ej. 5512345678"
+              autocomplete="tel"
+            />
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="btn-primary">Enviar mensaje</button>
+            <p id="formSuccess" class="form-success" role="alert" aria-live="assertive"></p>
+          </form>
+        </div>
+
+        <div class="logo-large-container" aria-hidden="true">
+          <img
+            src="./assets/nenes land.jpg"
+            alt="Logo grande de Nenesland"
+            class="logo-large"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <section class="location-section">
+        <div class="section-title">
+            <h2>Visítanos y Comienza la Diversión</h2>
+        </div>
+
+        <div class="location-container">
+            <div class="location-info">
+            <h3>Somos Nenesland</h3>
+            <p>
+              Somos especialistas en convertir cualquier reunión en una experiencia llena de saltos, risas y diversión.  
+            </p>
+            <h4><i class="fas fa-map-marker-alt"></i> Nuestra Ubicación</h4>
+            <p>
+                Puedes encontrarnos en el corazón de la ciudad, listos para atenderte. <br>
+                <strong>86982 Emiliano Zapata, Tab., México</strong>
+            </p>
+            <a href="#contacto" class="">Contáctanos ahora</a>
+            </div>
+
+            <div class="map-container" role="region" aria-label="Mapa con ubicación de Nenesland">
+            <iframe
+                src="https://maps.google.com/maps?q=17.737000,-91.752400&z=15&output=embed"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            </div>
+        </div>
+        </section>
+    </section>
+  </main>
+
+    <footer>
+    <div class="footer-logo">
+        <span>N</span><span>e</span><span>n</span><span>e</span><span>s</span> <span class="land-footer">LAND</span>
+    </div>
+    <div class="social-footer">
+        <a href="https://www.facebook.com/nenes.land.2025" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+        <a href="http://instagram.com/nenes_land/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/529341249074" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p style="margin-top: 1rem;">&copy; 2025 Nenes Land. Todos los derechos reservados.</p>
+    </footer>
+
+  <script src="./js/main.js"  ></script>
+</body>
+</html>
